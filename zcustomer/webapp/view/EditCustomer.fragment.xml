@@ -1,0 +1,48 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+>
+	<Dialog
+		id="openDialogEdit"
+		title="{i18n>editCustomer}"
+	>
+		<beginButton>
+			<Button
+				text="{i18n>save}"
+				type="Accept"
+				press="handleSaveBtnPressEdit"
+			/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="{i18n>cancel}"
+				type="Reject"
+				press="handleCancelBtnPressEdit"
+			/>
+		</endButton>
+		<f:SimpleForm
+			id="RegisterForm"
+			editable="true"
+		>
+			<f:content>
+				<Label text="{i18n>addNome}"/>
+				<Input id="CustomerName"
+					   value="{EditFragmentModel>/Nome}"
+					   placeholder=""
+				/>
+				<Label text="{i18n>addEndereco}"/>
+				<Input id="CustomerAdress"
+					   value="{EditFragmentModel>/Endereco}"
+					   placeholder=""
+				/>
+				<Label text="{i18n>addTelefone}"/>
+				<MaskInput id="CustomerTelephone"
+					   value="{EditFragmentModel>/Telefone}"
+					   placeholder=""
+					   mask="(99) 9 9999 9999"
+				/>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</c:FragmentDefinition>

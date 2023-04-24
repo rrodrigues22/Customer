@@ -1,0 +1,42 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+>
+	<Dialog
+		id="openDialog"
+		
+		title="{= ${editClient>/isEdit} ? ${i18n>editCustomer} : ${i18n>registerCustomer}}"
+	>
+		<beginButton>
+			<Button
+				text="{i18n>save}"
+				type="Accept"
+				press="handleSaveBtnPress"
+			/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="{i18n>cancel}"
+				type="Reject"
+				press="handleCancelBtnPress"
+			/>
+		</endButton>
+		<f:SimpleForm
+			id="RegisterForm"
+			editable="true"
+		>
+			<f:content>
+				<Label text="{i18n>addNome}"/>
+				<Input id="CustomerName"/>
+				<Label text="{i18n>addEndereco}"/>
+				<Input id="CustomerAdress"/>
+				<Label text="{i18n>addTelefone}"/>
+				<MaskInput
+					id="CustomerTelephone"
+					mask="(99) 9 9999 9999"
+				/>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</c:FragmentDefinition>
